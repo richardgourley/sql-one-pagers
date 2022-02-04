@@ -9,7 +9,9 @@
 
 **ORDER BY:**
 a. Can you remember the query syntax for retrieving all first names from a CUSTOMERS table, ordered by first name in descending order.
+
 b. Can you retrieve all first names and cities from a CUSTOMERS table, ordering first by city and then by first name, alphabetically.
+
 c. Can you retrieve all first names from a CUSTOMERS table, ordering the first names by length, starting with the shortest name first.
 
 
