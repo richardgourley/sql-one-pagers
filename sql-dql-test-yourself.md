@@ -5,8 +5,6 @@
 # 1. Query Order
 - Write the order SQL performs queries in by keyword, eg. FROM, WHERE, SELECT etc.
 
-------
-
 # 2. Sorting
 
 ## 2a. Order By
@@ -16,8 +14,6 @@
 2. Write a query to retrieve first names and city from a table, ordering first by city and then by first name alphabetically.
 
 3. Write a query to retrieve all first names from a table, ordering the first names by length, starting with the shortest name first.
-
-------
 
 # 3. Limiting
 
@@ -30,8 +26,6 @@
 3. Write the first part of a query (the SELECT part) to retrieve the top 1 percent of results.
 
 4. Write the first part of a query (the SELECT part) to retrieve the top 3 results with ties (any results that are equal third)
-
-------
 
 # 4. Filtering
 
@@ -73,8 +67,6 @@
 
 2. Write a join query that uses two tables giving a single letter alias to each table.
 
-------
-
 # 5. Joining Tables
 
 ## 5a. Inner Join
@@ -87,25 +79,32 @@
 
 ## 5b. Left Join
 
-1. Write a query that retrieves all candidates from a candidates table, and then return a second column highlighting if they appear in an employees table.
+**1. QUERY AIM:**
+- In this query, we want to see everyone from the CANDIDATES table, and return either NULL or if they are also in the EMPLOYEES table, return their details.
 
-2. Write a query that retrieves all product names and any order ids' they have from two tables, highlighting any products that do not have any order ids'.
+**2. QUERY AIM:**
+- In this query we want a list of all product names from the PRODUCTS table (LEFT table) and then either NULL or the order_ids for this product.
 
 ## 5c. Right Join
 
-1. Write a query that retrieves all employees, and then return either their details if they appear in the candidates table, or highlight if they don't appear in the candidates table.  Use a RIGHT JOIN instead of a LEFT JOIN here.
+**1. QUERY AIM:**
+- This query aims to retrieve and asses ALL employees from the EMPLOYEES table (RIGHT table) and see if they appear in the CANDIDATES table (on the left).
+
 
 ## 5d. Full Outer Join
 
-1. Write a query that shows all candidates and employees from both the candidates and employees table, showing if they appear in othe tables or only in one table.
+**1. QUERY AIM:**
+- This query aims to get all candidates from the CANDIDATES table and all employees from the EMPLOYEES table and show if they are in BOTH tables or just appear in one of the tables.
 
 ## 5e. Cross Join
 
-1. Write a query that gets all combinations of store ids and product ids from a store and a products table. 
+**1. QUERY AIM:**
+- This query aims to combine all possible combinations of store from STORES and product from PRODUCTS and then use that combination further as a LEFT table in a further left JOIN.
 
 ## 5f. Self Join
 
-
+**1. QUERY AIM:**
+- This query aims to return all employees and their manager_id using a SELF JOIN where the table EMPLOYEES is assessed against itself.
 
 
 
