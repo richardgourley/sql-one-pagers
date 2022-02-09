@@ -1,9 +1,11 @@
 # SQL Data Query Language Queries - Test Yourself
-- The tests in this page are all based on the 'sql-dql-queries.ipynb' file queries.
-- The tests are to make sure you can remember query syntax but it is really important to also understand the queries in depth before trying the tests. Check the query aims and notes in the 'sql-dql-queries.ipynb' file.
+- This page has all of the 'Query Aim' sections from the 'sql-dql-queries.ipynb' file.
+- To test yourself, try to write a query for every 'QUERY AIM' on this page.
+- The aim is to check your syntax knowledge and to see any topics you need to revise.
+
 
 # 1. Query Order
-- Write the order SQL performs queries in by keyword, eg. FROM, WHERE, SELECT etc.
+- Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
 
 # 2. Sorting
 
@@ -71,39 +73,38 @@
 
 ## 5a. Inner Join
 
-**1. QUERY AIM:**
+**QUERY AIM:**
 - This query retrieves all candidates from the CANDIDATES table whose name also appears in the EMPLOYEES table.
 
-**2. QUERY AIM:**
+**QUERY AIM:**
 - This inner join obtains data from two tables to get product details from the PRODUCTS table and category_name from the CATEGORIES table.
 
 ## 5b. Left Join
 
-**1. QUERY AIM:**
-- In this query, we want to see everyone from the CANDIDATES table, and return either NULL or if they are also in the EMPLOYEES table, return their details.
+**QUERY AIM:**
+- In this query, we want to see everyone from the CANDIDATES table, and return either NULL or if they are also in the EMPLOYEES table, returning their details.
 
-**2. QUERY AIM:**
+**QUERY AIM:**
 - In this query we want a list of all product names from the PRODUCTS table (LEFT table) and then either NULL or the order_ids for this product.
 
 ## 5c. Right Join
 
-**1. QUERY AIM:**
+**QUERY AIM:**
 - This query aims to retrieve and asses ALL employees from the EMPLOYEES table (RIGHT table) and see if they appear in the CANDIDATES table (on the left).
-
 
 ## 5d. Full Outer Join
 
-**1. QUERY AIM:**
+**QUERY AIM:**
 - This query aims to get all candidates from the CANDIDATES table and all employees from the EMPLOYEES table and show if they are in BOTH tables or just appear in one of the tables.
 
 ## 5e. Cross Join
 
-**1. QUERY AIM:**
+**QUERY AIM:**
 - This query aims to combine all possible combinations of store from STORES and product from PRODUCTS and then use that combination further as a LEFT table in a further left JOIN.
 
 ## 5f. Self Join
 
-**1. QUERY AIM:**
+**QUERY AIM:**
 - This query aims to return all employees and their manager_id using a SELF JOIN where the table EMPLOYEES is assessed against itself.
 
 
