@@ -122,14 +122,54 @@
 **QUERY AIM:**
 - This query aims to return all employees and their manager_id using a SELF JOIN where the table EMPLOYEES is assessed against itself.
 
+# 6. Grouping
 
+## 6a. Group By
 
+**QUERY AIM:**
+- This query aims to return the COUNT of orders placed grouped by customer_id and year where the customer_id is either 1 or 2.
 
+**QUERY AIM:**
+- This query aims to get all cities with the COUNT of all customer_ids in each city.
 
+**QUERY AIM:**
+- This query retrieves the AVG list_price for each brand where the model_year is 2018, using GROUP BY to get the average list_price per brand.
 
+**QUERY AIM:**
+- This query aims to retrieve the total SUM of each order less discount for each order_id in the ORDER_ITEMS table.
 
+## 6b. Having
 
+**QUERY AIM:**
+- This query aims to aggregate with SUM the totals for each salesperson but uses HAVING to only find each salesperson_name with total sales over 2000.
 
+**QUERY AIM:**
+- This query retrieves the MAX list_price and MIN list_price for each category where the MAX is less than 4000 but the MIN is greater than 500.
 
+**QUERY AIM:**
+- This query gets the AVG list_price for each category_id where the AVG is BETWEEN 500 and 1000.
 
+## 6c. Grouping Sets
 
+**QUERY AIM:**
+- This query uses GROUPING SETS to get the SUM of sales for different combinations of brands and categories.
+- The query finds the sum total for BRAND + CATEGORY, BRAND ONLY, CATEGORY ONLY and finally the blank () set returns the total SUM of sales.
+
+## 6d. Cube
+
+**QUERY AIM:**
+- This query uses CUBE to get all possible combinations of aggregated results for columns named d1,d2 and d3. (A shorter way to create grouping sets)
+
+**QUERY AIM:**
+- This query uses a partial CUBE to only retrieve all GROUPING SETS with brand as the first dimension, so this will retrieve SUM of sales for BRAND + CATEGORY and BRAND TOTALS.
+
+## 6e. Roll Up
+
+**QUERY AIM:**
+- This query aims to get SUM of sales for BRAND + CATEGORY, BRAND ONLY and OVERALL TOTAL.
+
+**QUERY AIM:**
+- This query assumes category is top of the hieracrchy and will retrieve the SUM of sales for CATEGORY + BRAND, CATEGORY ONLY and OVERALL TOTAL.
+
+**QUERY AIM:**
+- This query uses a partial ROLLUP to only retrieve BRAND + CATEGORY and BRAND ONLY but will not retrieve the SALES TOTAL as a full ROLLUP would do.
