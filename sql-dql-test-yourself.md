@@ -11,43 +11,56 @@
 
 ## 2a. Order By
 
-1. Write a query to retrieve all first names from a table ordering the names alphabetically.
+**QUERY AIM:**
+- In this query, we retrieve all first_name from CUSTOMERS, ordered by first_name.
 
-2. Write a query to retrieve first names and city from a table, ordering first by city and then by first name alphabetically.
+**QUERY AIM:**
+- In this query, we retrieve all first_name from CUSTOMERS, ordered first by city, then wby first_name alphabetically.
 
-3. Write a query to retrieve all first names from a table, ordering the first names by length, starting with the shortest name first.
+**QUERY AIM:**
+- This query returns all customers from the CUSTOMERS table in order of the length of their first_name.
 
 # 3. Limiting
 
 ## 3a. Offset Fetch
 
-1. Write a query to retrieve team name and points from a table, ordering by points highest to lowest. Then limit the query to skip the first 4 rows and only retrieve the next 13 rows after that.
+**QUERY AIM:**
+- In this query, from a 20 team league, we want to retrieve teams that are not in the top 4 (OFFSET) and teams that are not in the bottom 3 (FETCH FIRST 13 ROWS) after we offset the first 4 rows.
 
-2. Write the first part of a query (the SELECT part) to retrieve the first 10 results of a query.
+## 3b. Select Top
 
-3. Write the first part of a query (the SELECT part) to retrieve the top 1 percent of results.
-
-4. Write the first part of a query (the SELECT part) to retrieve the top 3 results with ties (any results that are equal third)
+**QUERY AIMS:**
+- The queries below would retrieve the TOP 10, the TOP 1% and the TOP 3 WITH TIES.
+- (Just write the SELECT part of the 3 queries)
 
 # 4. Filtering
 
 ## 4a. Distinct
 
-1. Write a query to retrieve the unique countries from a table.
+**QUERY AIM:**
+- This query tells us which countries we have customers in from the CUSTOMERS table.
+- DISTINCT removes any duplicates.
 
 ## 4b. And, Or, In
 
-1. Write a query to retrieve products that have a brand id of 1 or 2, and have a list price greater than 40.
+**QUERY AIM:**
+- This query uses OR and AND keywords to retrieve details from the PRODUCTS table where the brand_id is 1 or 2, and the list_price is higher than 40.
 
-2. Write a query to retrieve products that have a brand id of 10,11,12 or 13.
+**QUERY AIM:**
+- This query uses the IN operator to find products with a brand_id that is either 1,2,3 or 4.
 
 # 4c. Between, Not Between
 
-1. Write a query to retrieve products that don't have a list price between 180 and 200.
+**QUERY AIM:**
+- This query uses NOT BETWEEN to find products whose list_price does not match the price range below.
 
-2. Write a query to retrieve orders that have an order date between May 20th, 2021 and June 20th, 2021.
+**QUERY AIM:**
+- This query finds all orders from the table ORDERS where the date of the order matches a specific date range.
 
 # 4d. Like
+
+**QUERY AIMS:**
+- These queries use types of regular expressions to return filtered string results.
 
 1. Write a query to retrieve first names that start with 'z'.
 
@@ -65,9 +78,11 @@
 
 # 4e. Column Aliases
 
-1. Write a query to retrieve first name and last name, combined into one column with the alias 'Full Name'
+**QUERY AIM:**
+- This query uses ' ' as we want to include a columns alias with spaces returning the first_name and last_name from CUSTOMERS as a column named 'Full Name'.
 
-2. Write a join query that uses two tables giving a single letter alias to each table.
+**QUERY AIM:**
+- This query makes an inner join query giving the CUSTOMERS table the alias of 'c', and the ORDERS table the alias of 'o'.
 
 # 5. Joining Tables
 
