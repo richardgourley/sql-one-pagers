@@ -1,6 +1,6 @@
 # SQL Data Query Language Queries - Test Yourself
 - Use the examples and notes from 'sql-dql-queries.ipnb' to check syntax knowledge and understanding first.
-- Write a query example for each section below and explain to yourself what the query is going to produce and why.
+- Try to write the query examples below to check any knowledge gaps.
 
 ## 1. Query Order
 - Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
@@ -34,7 +34,7 @@
 - Write a query example that retrieves rows based on a numerical value between two numbers.
 - Write a query example that retrieves rows based on a datetime type between two dates.
 
-# 4d. Like
+### 4d. Like
 - Write a query example that retrieves names starting with 'z'.
 - Write a query example that retrieves names ending in 'er'.
 - Write a query example that retrieves names beginning with 't' and ending in 's'.
@@ -92,4 +92,71 @@
 ### 6e. Roll Up
 - Write a query example to demonstrate how use ROLLUP to get sales totals for brand plus category, brand only ad the overall sales total.
 - Write a query example to demonstrate how to use a partial ROLLUP to retrieve sales totals for brand plus category and brand only.
+
+## 7. SubQuery
+
+### 7a. Overview
+- Write a query example to demonstrate how to use the IN keyword to find matches within a subquery, such as finding customers from an orders table based in New York.
+- Write a query example to demonstrate how you could find the highest order number from an order items table for every order in an orders table.
+
+### 7b. Correlated SubQuery
+- Write a query example to demonstrate how to use the IN keyword and a correlated subquery to find products with the highest list price in their category.
+
+### 7c. Exists
+- Write a query example to demonstrate how to use EXISTS to retrieve details for customers who have placed 2 or more orders in the orders table.
+
+### 7d. Any
+- Write a query example to demonstrate how to use ANY and a subquery to find products who have an order quantity of more than 2 in the order items table.
+
+### 7e. All
+- Write a query example to demonstrate how to use ALL and a subquery to find all products that have a higher list price than ALL of the average list prices for each brand id.
+
+## 8. Set Operators
+
+### 8a. Union
+- Write a query example to demonstrate how to combine two queries with identical data types, removing all duplicate rows between the two tables.
+
+### 8b. Union All
+- Write a query example to demonstrate how to combine two queries with identical data types, keeping all duplicate rows between the two tables.
+
+### 8c. Intersect
+- Write a query example to demonstrate how to use two tables and INTERSECT to find objects or people that appear in both tables.
+
+### 8d. Except
+- Write a query example to demonstrate how to use two tables and EXCEPT to find object or people that appear in the first table but not in the second tables.
+
+## 9. CTEs
+
+### 9a. CTEs
+- Write a query example to demonstrate how to create a CTE with column aliases in the outer table to - Write a query example to return sales totals for each salesperson for the year 2019.
+- Write a query example to demonstrate how to create a CTE that retrieves the average order count per member of staff for the year 2018.
+- Write a query example showing how you could use multiple CTEs as the tables used by a join.
+
+### 9b. Recursive CTEs
+- Write a query example to demonstrate how a recursive CTE could return the numbers 1-4.
+- Write a query example to demonstrate how a recursive CTE could return all employees and their managers from within the same table.
+
+## 10. Pivot
+
+### 10a. Pivot
+- Write a query example to demonstrate how you could return the total number of products per category with the category names pivoted to become columns in the result.
+- Write a query example to demonstrate how you could add a year column to the query to create a row group called year to display product totals by category in the columns and by year as a row group.
+
+## 11. Expressions
+
+### 11a. Case
+- Write a query example to demonstrate how you could use CASE to create two columns - 'Pass' and 'Fail' that count how many exam scores recieved a 'Pass' or a 'Fail'.
+- Write a query example to demonstrate how you could return all students, their results and a column called outcome with 'Pass' or 'Retake' added depending if the score was over 70 or not.
+
+### 11b. Coalesce
+- Write a query example to demonstrate how you could use COALESCE to return employee names and emails, returning 'N/A' if the email is NULL.
+- Write a query example to demonstrate how you could use COALESCE to calculate a monthly salary column for all employees in a table, even if the employee has an hourly or daily salary rate in a corresponding column.
+
+### 11c. NullIf
+- Write a query example to demonstrate how you could use NULLIF to return an email address as NULL if the email address is blank.
+
+
+
+
+
 
