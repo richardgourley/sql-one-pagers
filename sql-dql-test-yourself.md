@@ -1,6 +1,6 @@
 # SQL Data Query Language Queries - Test Yourself
 - Use the examples and notes from 'sql-dql-queries.ipnb' to check syntax knowledge and understanding first.
-- Try to write the query examples below to check any knowledge gaps.
+- Try to write the query examples below and explain to yourself what the result should be. Check any gaps in your knowledge.
 
 ## 1. Query Order
 - Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
