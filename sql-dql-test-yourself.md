@@ -1,8 +1,5 @@
 # SQL Data Query Language Queries - Test Yourself
-- This page has all of the 'Query Aim' sections from the 'sql-dql-queries.ipynb' file.
-- To test yourself, try to write a query for every 'QUERY AIM' on this page.
-- The aim is to check your syntax knowledge and to see any topics you need to revise.
-
+- 
 
 # 1. Query Order
 - Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
