@@ -1,172 +1,95 @@
 # SQL Data Query Language Queries - Test Yourself
-- 
+- Use the examples and notes from 'sql-dql-queries.ipnb' to check syntax knowledge and understanding first.
+- Write a query example for each section below and explain to yourself what the query is going to produce and why.
 
-# 1. Query Order
+## 1. Query Order
 - Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
 
-# 2. Sorting
+## 2. Sorting
 
-## 2a. Order By
+### 2a. Order By
+- Write a query example with ORDER BY.
+- Write a query example with ORDER BY, ordering by more than one column.
 
-**QUERY AIM:**
-- In this query, we retrieve all first_name from CUSTOMERS, ordered by first_name.
+## 3. Limiting
 
-**QUERY AIM:**
-- In this query, we retrieve all first_name from CUSTOMERS, ordered first by city, then wby first_name alphabetically.
+### 3a. Offset Fetch
+- Write a query example that skips a number of rows at the start and then fetches a number of rows after that.
 
-**QUERY AIM:**
-- This query returns all customers from the CUSTOMERS table in order of the length of their first_name.
+### 3b. Select Top
+- Write a query example that retrieves the top 10 rows of a specified column value.
+- Write a query example that retrieves the top 1% of rows based on a column value.
+- Write a query example that retrieves the top 3 rows with tied results, based on a column value.
 
-# 3. Limiting
+## 4. Filtering
 
-## 3a. Offset Fetch
+### 4a. Distinct
+- Write a query example that returns the unique values within a column.
 
-**QUERY AIM:**
-- In this query, from a 20 team league, we want to retrieve teams that are not in the top 4 (OFFSET) and teams that are not in the bottom 3 (FETCH FIRST 13 ROWS) after we offset the first 4 rows.
+### 4b. And, Or, In
+- Write a query example that retrieves rows using the AND and OR keywords.
+- Write a query example that retrieves rows based on multiple OR statements.
 
-## 3b. Select Top
-
-**QUERY AIMS:**
-- The queries below would retrieve the TOP 10, the TOP 1% and the TOP 3 WITH TIES.
-- (Just write the SELECT part of the 3 queries)
-
-# 4. Filtering
-
-## 4a. Distinct
-
-**QUERY AIM:**
-- This query tells us which countries we have customers in from the CUSTOMERS table.
-- DISTINCT removes any duplicates.
-
-## 4b. And, Or, In
-
-**QUERY AIM:**
-- This query uses OR and AND keywords to retrieve details from the PRODUCTS table where the brand_id is 1 or 2, and the list_price is higher than 40.
-
-**QUERY AIM:**
-- This query uses the IN operator to find products with a brand_id that is either 1,2,3 or 4.
-
-# 4c. Between, Not Between
-
-**QUERY AIM:**
-- This query uses NOT BETWEEN to find products whose list_price does not match the price range below.
-
-**QUERY AIM:**
-- This query finds all orders from the table ORDERS where the date of the order matches a specific date range.
+### 4c. Between, Not Between
+- Write a query example that retrieves rows based on a numerical value between two numbers.
+- Write a query example that retrieves rows based on a datetime type between two dates.
 
 # 4d. Like
+- Write a query example that retrieves names starting with 'z'.
+- Write a query example that retrieves names ending in 'er'.
+- Write a query example that retrieves names beginning with 't' and ending in 's'.
+- Write a query example that retrieves names that start with any character, followed by 'u', followed by any characters.
+- Write a query example that retrieves names starting with 'Z' or 'Y'.
+- Write a query example that retrieves names that do not start with the letter range 'A-D'.
+- Write a query example to demonstrate how you would escape the '%' sign and retrieve columns containing the '%' sign in the text.
 
-**QUERY AIMS:**
-- These queries use types of regular expressions to return filtered string results.
+### 4e. Column Aliases
+- Write a query example to demonstrate how you would give a column alias containing spaces.
+- Write a query example to demonstrate how inner joins can have one letter alias names.
 
-1. Write a query to retrieve first names that start with 'z'.
+## 5. Joining Tables
 
-2. Write a query to retrieve first names that end in 'er'.
+### 5a. Inner Join
+- Write a query example to demonstrate how you would use an inner join to find matches between two tables.
+- Write a query example to demonstrate how an inner join can be used to retrive column data from a second table that is linked to a first table but not available in the first table.
 
-3. Write a query to retrieve first names that begin with 't' but end in 's'.
+### 5b. Left Join
+- Write a query example to demonstrate how a left join can display all rows from a first table, and whether or not there is a match in a second table.
+- Write a query example to demonstrate how a left join and searching for null values could be used to find out where there are no matches from a first table in the second table.
 
-4. Write a query to retrieve first names from a table that begin with any character, followed by a 'u', then followed by any characters.
+### 5c. Right Join
+- Write a query example to demonstrate how a right join is the opposite of a left join
 
-5. Write a query to retrieve first names starting with 'Z' or 'Y'.
+### 5d. Full Outer Join
+- Write a query example to demonstrate how a full join can get all results and any matches or non matches from a first and second table.
 
-6. Write a query to retrieve first names not starting with any characters between 'A' and 'D'.
+### 5e. Cross Join
+- Write a query example to demonstrate how you could get all combinations of store ids and product ids. Then use that query as the left table of a further left join. 
 
-7. Write a query to retrieve comments that include '30%', escaping the '%' symbol in the query.
+### 5f. Self Join
+- Write a query example to demonstrate how to use a self join to find all employees and their managers from the same table .
 
-# 4e. Column Aliases
+## 6. Grouping
 
-**QUERY AIM:**
-- This query uses ' ' as we want to include a columns alias with spaces returning the first_name and last_name from CUSTOMERS as a column named 'Full Name'.
+### 6a. Group By
+- Write a query example to demonstrate how you could count how many orders have been placed by customer_id and year where the customer_id is between 1 and 10.
+- Write a query example to demonstrate how you could count how many customers are in each city.
+- Write a query example to demonstrate how you could get the average list price of products per brand.
+- Write a query example to demonstrate how you could get the total sum of orders items from an order items table for each order in an orders table.
 
-**QUERY AIM:**
-- This query makes an inner join query giving the CUSTOMERS table the alias of 'c', and the ORDERS table the alias of 'o'.
+### 6b. Having
+- Write a query example to demonstrate how you could get the total sales for each salesperson where the sales total is more than 5000.
+- Write a query example to demonstrate how you could get the maximum list price and minimum list price for products in each category where the maximum price is less than 10000 but the minimum price is more than 2000.
+- Write a query example to demonstrate how you could get the average list price for each category where the average list price is between 500 and 3000.
 
-# 5. Joining Tables
+### 6c. Grouping Sets
+- Write a query example to demonstrate how you would get grouping sets of sales totals for brand and category, brand only, category only and an overall total.
 
-## 5a. Inner Join
+### 6d. Cube
+- Write a query example to demonstrate how to use CUBE to get all combinations of grouping sets for 3 columns.
+- Write a query example to demonstrate how to use a partial CUBE to only retrieve the sales totals for brand plus category, and brand only.
 
-**QUERY AIM:**
-- This query retrieves all candidates from the CANDIDATES table whose name also appears in the EMPLOYEES table.
+### 6e. Roll Up
+- Write a query example to demonstrate how use ROLLUP to get sales totals for brand plus category, brand only ad the overall sales total.
+- Write a query example to demonstrate how to use a partial ROLLUP to retrieve sales totals for brand plus category and brand only.
 
-**QUERY AIM:**
-- This inner join obtains data from two tables to get product details from the PRODUCTS table and category_name from the CATEGORIES table.
-
-## 5b. Left Join
-
-**QUERY AIM:**
-- In this query, we want to see everyone from the CANDIDATES table, and return either NULL or if they are also in the EMPLOYEES table, returning their details.
-
-**QUERY AIM:**
-- In this query we want a list of all product names from the PRODUCTS table (LEFT table) and then either NULL or the order_ids for this product.
-
-## 5c. Right Join
-
-**QUERY AIM:**
-- This query aims to retrieve and asses ALL employees from the EMPLOYEES table (RIGHT table) and see if they appear in the CANDIDATES table (on the left).
-
-## 5d. Full Outer Join
-
-**QUERY AIM:**
-- This query aims to get all candidates from the CANDIDATES table and all employees from the EMPLOYEES table and show if they are in BOTH tables or just appear in one of the tables.
-
-## 5e. Cross Join
-
-**QUERY AIM:**
-- This query aims to combine all possible combinations of store from STORES and product from PRODUCTS and then use that combination further as a LEFT table in a further left JOIN.
-
-## 5f. Self Join
-
-**QUERY AIM:**
-- This query aims to return all employees and their manager_id using a SELF JOIN where the table EMPLOYEES is assessed against itself.
-
-# 6. Grouping
-
-## 6a. Group By
-
-**QUERY AIM:**
-- This query aims to return the COUNT of orders placed grouped by customer_id and year where the customer_id is either 1 or 2.
-
-**QUERY AIM:**
-- This query aims to get all cities with the COUNT of all customer_ids in each city.
-
-**QUERY AIM:**
-- This query retrieves the AVG list_price for each brand where the model_year is 2018, using GROUP BY to get the average list_price per brand.
-
-**QUERY AIM:**
-- This query aims to retrieve the total SUM of each order less discount for each order_id in the ORDER_ITEMS table.
-
-## 6b. Having
-
-**QUERY AIM:**
-- This query aims to aggregate with SUM the totals for each salesperson but uses HAVING to only find each salesperson_name with total sales over 2000.
-
-**QUERY AIM:**
-- This query retrieves the MAX list_price and MIN list_price for each category where the MAX is less than 4000 but the MIN is greater than 500.
-
-**QUERY AIM:**
-- This query gets the AVG list_price for each category_id where the AVG is BETWEEN 500 and 1000.
-
-## 6c. Grouping Sets
-
-**QUERY AIM:**
-- This query uses GROUPING SETS to get the SUM of sales for different combinations of brands and categories.
-- The query finds the sum total for BRAND + CATEGORY, BRAND ONLY, CATEGORY ONLY and finally the blank () set returns the total SUM of sales.
-
-## 6d. Cube
-
-**QUERY AIM:**
-- This query uses CUBE to get all possible combinations of aggregated results for columns named d1,d2 and d3. (A shorter way to create grouping sets)
-
-**QUERY AIM:**
-- This query uses a partial CUBE to only retrieve all GROUPING SETS with brand as the first dimension, so this will retrieve SUM of sales for BRAND + CATEGORY and BRAND TOTALS.
-
-## 6e. Roll Up
-
-**QUERY AIM:**
-- This query aims to get SUM of sales for BRAND + CATEGORY, BRAND ONLY and OVERALL TOTAL.
-
-**QUERY AIM:**
-- This query assumes category is top of the hieracrchy and will retrieve the SUM of sales for CATEGORY + BRAND, CATEGORY ONLY and OVERALL TOTAL.
-
-**QUERY AIM:**
-- This query uses a partial ROLLUP to only retrieve BRAND + CATEGORY and BRAND ONLY but will not retrieve the SALES TOTAL as a full ROLLUP would do.
