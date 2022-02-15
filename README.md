@@ -3,7 +3,7 @@
 ## INTRO
 This is a one page reference for the most common SQL Data Query Language queries. 
 
-The only include the query examples. See 'Related' to setup the sever and download sample databases you can work with.
+This repo is only focussed on data query language. See 'Related' to setup the sever and download sample databases you can work with.
 
 ## CONTENTS
 **sql-dql-queries.ipynb**
