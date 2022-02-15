@@ -16,10 +16,6 @@ The only include the query examples. See 'Related' to setup the sever and downlo
 - This file is a list of simple tests to help users remember all of the example queries from each topic.
 - If you can confidently write out query examples for every section, then you're on your way to mastering querying in SQL.
 
-## GETTING STARTED
-- The examples are a mix of my own and examples from online SQL Server tutorials.
-- If you are learning or working on PostgreSQL or MySQL, the 'sql-dql-queries-test-yourself' file is still useful for checking gaps in your knowledge. The 'sql-dql-queries page is also a useful reference even though the syntax will be different in some parts.
-
 ### SECTIONS
 1. **SQL Query Order**
 2. **Sorting** - Order by
@@ -32,6 +28,10 @@ The only include the query examples. See 'Related' to setup the sever and downlo
 9. **Common Table Expressions** - CTEs, Recursive CTEs
 10. **Pivot**
 11. **Expressions** - Case, Coalesce, NullIf
+
+## GETTING STARTED
+- The examples are a mix of my own and examples from online SQL Server tutorials.
+- If you are learning or working on PostgreSQL or MySQL, the 'sql-dql-queries-test-yourself' file is still useful for checking gaps in your knowledge. The 'sql-dql-queries page is also a useful reference even though the syntax will be different in some parts.
 
 ## TOOLS
 - SQL Server
