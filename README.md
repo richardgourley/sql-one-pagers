@@ -20,6 +20,19 @@ The only include the query examples. See 'Related' to setup the sever and downlo
 - The examples are a mix of my own and examples from online SQL Server tutorials.
 - If you are learning or working on PostgreSQL or MySQL, the 'sql-dql-queries-test-yourself' file is still useful for checking gaps in your knowledge. The 'sql-dql-queries page is also a useful reference even though the syntax will be different in some parts.
 
+### SECTIONS
+1. **SQL Query Order**
+2. **Sorting** - Order by
+3. **Limiting** - Offset, Fetch, Select Top
+4. **Filtering** - Distinct, And Or In, Between, Like, Column Aliases
+5. **Joins** - Inner Join, Left Join, Right Join, Full Outer Join, Cartesian Join, Self Join
+6. **Grouping** - Group By, Having, Grouping Sets, Cube, Rollup
+7. **SubQuery** - Correlated subquery, Exists, Any, All
+8. **Sets** - Union, Union All, Intersect, Except
+9. **Common Table Expressions** - CTEs, Recursive CTEs
+10. **Pivot**
+11. **Expressions** - Case, Coalesce, NullIf
+
 ## TOOLS
 - SQL Server
 
