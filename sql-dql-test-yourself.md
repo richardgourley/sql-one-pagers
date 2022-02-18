@@ -50,66 +50,66 @@
 ## 5. Joining Tables
 
 ### 5a. Inner Join
-- Write a query example to demonstrate how you would use an inner join to find matches between two tables.
-- Write a query example to demonstrate how an inner join can be used to retrive column data from a second table that is linked to a first table but not available in the first table.
+- Write a query that uses an INNER JOIN to find people who appear in both the candidates and employees table. The column they have in common is 'full_name'.
+- Write a query that uses an INNER JOIN to retrieve all product names and their category name. The column they have in column is 'category_id'.
 
 ### 5b. Left Join
-- Write a query example to demonstrate how a left join can display all rows from a first table, and whether or not there is a match in a second table.
-- Write a query example to demonstrate how a left join and searching for null values could be used to find out where there are no matches from a first table in the second table.
+- Write a query that uses a LEFT JOIN. The table should display all candidates from the candidates table, and show if they are also in the employees table or not. The column they have in common is 'full name'.
+- Write a query that uses a LEFT JOIN. The table should display all product_name from products and order_id from order_items. The table should show all products and matching order_id or NULL for order_id if the product has not been ordered so far. The column in common between the tables is 'product_id'. 
 
 ### 5c. Right Join
-- Write a query example to demonstrate how a right join is the opposite of a left join
+- Write a query that uses a RIGHT JOIN. The table should display all employees and whether they appear in the candidates table or not. The column the tables have in common is 'full_name'.
 
 ### 5d. Full Outer Join
-- Write a query example to demonstrate how a full join can get all results and any matches or non matches from a first and second table.
+- Write a query that uses FULL JOIN. The table should display all candidates and all employees from both tables and whether they appear in the other table or not.
 
 ### 5e. Cross Join
-- Write a query example to demonstrate how you could get all combinations of store ids and product ids. Then use that query as the left table of a further left join. 
+- Write a query that uses CROSS JOIN. The table should display all possible combinations of store id and product id. The columns should be store_id, product_id and a sales column which uses a function to return 0 the sales column is NULL. 
 
 ### 5f. Self Join
-- Write a query example to demonstrate how to use a self join to find all employees and their managers from the same table .
+- Write a query that uses SELF JOIN to find all employees and their managers from the same employees table.
 
 ## 6. Grouping
 
 ### 6a. Group By
-- Write a query example to demonstrate how you could count how many orders have been placed by customer_id and year where the customer_id is between 1 and 10.
-- Write a query example to demonstrate how you could count how many customers are in each city.
-- Write a query example to demonstrate how you could get the average list price of products per brand.
-- Write a query example to demonstrate how you could get the total sum of orders items from an order items table for each order in an orders table.
+- Write a query that uses GROUP BY. The table should display the customer id, the year orders were placed and how many orders were placed from an orders table.
+- Write a query that uses GROUP BY. The table should tell us how us how many customers are in each city.
+- Write a query that uses GROUP BY and INNER JOIN. The table should display how the average list price for each brand name. The column the products and brands table have in common is 'brand_id'.
+- Write a query that uses GROUP BY. The result should tell us the net value of all sales for each order_id from the orders table. The query should include the 'quantity' and 'discount' column inside an aggregate function for the net_value field. 
 
 ### 6b. Having
-- Write a query example to demonstrate how you could get the total sales for each salesperson where the sales total is more than 5000.
-- Write a query example to demonstrate how you could get the maximum list price and minimum list price for products in each category where the maximum price is less than 10000 but the minimum price is more than 2000.
-- Write a query example to demonstrate how you could get the average list price for each category where the average list price is between 500 and 3000.
+- Write a query that uses GROUP BY and HAVING. The result should tell us the sales totals for each salesperson but only where the sales total is more than 2000.
+- Write a query that uses GROUP BY and HAVING. The result should display the maximum and minimum list price for each category_id in the products table. We only want to return maximum list prices over 4000 and minimum list prices of less than 500.
+- Write a query that uses GROUP BY and HAVING. The result should display the average list price per category_id from the products table but only where the average list price is between 500 and 1000.
 
 ### 6c. Grouping Sets
-- Write a query example to demonstrate how you would get grouping sets of sales totals for brand and category, brand only, category only and an overall total.
+- Write a query that uses GROUP BY and GROUPING SETS. The result should display the total sales for brand and category, the total sales for each brand, the total sales for each category and the total overall sales. The columns should include brand, category and the sum of sales.
 
 ### 6d. Cube
-- Write a query example to demonstrate how to use CUBE to get all combinations of grouping sets for 3 columns.
-- Write a query example to demonstrate how to use a partial CUBE to only retrieve the sales totals for brand plus category, and brand only.
+- Write a query example that uses GROUP BY and CUBE to show the syntax for getting all combinations of grouping sets for 3 columns.
+- Write a query that uses GROUP BY and CUBE to demonstrate how to use a partial CUBE to only retrieve the sales totals for brand plus category, and brand only.
 
 ### 6e. Roll Up
-- Write a query example to demonstrate how use ROLLUP to get sales totals for brand plus category, brand only ad the overall sales total.
-- Write a query example to demonstrate how to use a partial ROLLUP to retrieve sales totals for brand plus category and brand only.
+- Write a query that uses GROUP BY and ROLLUP to get sales totals for brand plus category, brand only and the overall sales total.
+- Write a query that uses GROUP BY and a partial ROLLUP to retrieve sales totals for brand plus category and brand only.
 
 ## 7. SubQuery
 
 ### 7a. Overview
-- Write a query example to demonstrate how to use the IN keyword to find matches within a subquery, such as finding customers from an orders table based in New York.
-- Write a query example to demonstrate how you could find the highest order number from an order items table for every order in an orders table.
+- Write a query that has a subquery in the WHERE clause, using the IN keyword. 
+- Write a query that has a subquery as a column. The subquery should query from a related table. The subquery should contain the MAX keyword.
 
 ### 7b. Correlated SubQuery
-- Write a query example to demonstrate how to use the IN keyword and a correlated subquery to find products with the highest list price in their category.
+- Write a correlated subquery inside a WHERE clause and after the IN keyword. The subquery should contain the MAX keyword.
 
 ### 7c. Exists
-- Write a query example to demonstrate how to use EXISTS to retrieve details for customers who have placed 2 or more orders in the orders table.
+- Write a correlated subquery inside the WHERE clause, after the EXISTS keyword. The subquery should contain the COUNT and HAVING keywords.
 
 ### 7d. Any
-- Write a query example to demonstrate how to use ANY and a subquery to find products who have an order quantity of more than 2 in the order items table.
+- Write a query that has a subquery inside the WHERE clause, after the ANY keyword. 
 
 ### 7e. All
-- Write a query example to demonstrate how to use ALL and a subquery to find all products that have a higher list price than ALL of the average list prices for each brand id.
+- Write a query that has a subquery inside the WHERE clause, after the ALL keyword. The subquery should contain the AVG keyword.
 
 ## 8. Set Operators
 
