@@ -3,49 +3,49 @@
 - Try to write the query examples below and explain to yourself what the result should be. Check any gaps in your knowledge.
 
 ## 1. Query Order
-- Write the order of SQL queries by keyword, eg. FROM, WHERE, SELECT etc.
+- Write the keyword order in which a SQL query is performed eg. FROM, WHERE, SELECT etc.
 
 ## 2. Sorting
 
 ### 2a. Order By
-- Write a query example with ORDER BY.
-- Write a query example with ORDER BY, ordering by more than one column.
+- Write a query that uses ORDER BY. The query should order by one column such as name. The results should appear in ascending order.
+- Write a query that uses ORDER BY. The query should order results by two columns, city and first name. The results should be in alphabetical order.
 
 ## 3. Limiting
 
 ### 3a. Offset Fetch
-- Write a query example that skips a number of rows at the start and then fetches a number of rows after that.
+- Write a query that uses OFFSET and FETCH. The query should skip the first 4 rows and retrieve the following 13 rows.
 
 ### 3b. Select Top
-- Write a query example that retrieves the top 10 rows of a specified column value.
-- Write a query example that retrieves the top 1% of rows based on a column value.
-- Write a query example that retrieves the top 3 rows with tied results, based on a column value.
-
+- Write a query that uses SELECT TOP. The query should retrieve the top 10 rows based on a column value. The query could retrieve the 10 highest list prices from the products table.
+- Write a query that uses SELECT TOP. The query should retrieve the top 1% of rows based on a column value. The query could retrieve the highest list prices for products that are in the top 1%.
+- Write a query that uses SELECT TOP. The query should retrieve the top 3 rows based on a column value with any ties included.  The query could return the 3 highest list prices for products including any ties.  (The result return more than 3 if multiple products have the same list price.)
+ 
 ## 4. Filtering
 
 ### 4a. Distinct
-- Write a query example that returns the unique values within a column.
+- Write a query that uses DISTINCT. The query should return all cities from the customers table without any duplicate cities.
 
 ### 4b. And, Or, In
-- Write a query example that retrieves rows using the AND and OR keywords.
-- Write a query example that retrieves rows based on multiple OR statements.
+- Write a query that uses AND and OR. The query should use brackets to avoid errors. The query should return product information for all products whose brand_id is 1 or 2 and whose list price is higher than 40.
+- Write a query that uses IN. The query should return all products whose brand_id is 1,2,3 or 4.
 
 ### 4c. Between, Not Between
-- Write a query example that retrieves rows based on a numerical value between two numbers.
-- Write a query example that retrieves rows based on a datetime type between two dates.
+- Write a query that uses BETWEEN. The query should retrieve all products that have a list price that isn't between 149.99 AND 199.99.
+- Write a query that uses BETWEEN. The query should retrieve all orders that have a date January 15th 2017 and January 17th 2017.
 
 ### 4d. Like
-- Write a query example that retrieves names starting with 'z'.
-- Write a query example that retrieves names ending in 'er'.
-- Write a query example that retrieves names beginning with 't' and ending in 's'.
-- Write a query example that retrieves names that start with any character, followed by 'u', followed by any characters.
-- Write a query example that retrieves names starting with 'Z' or 'Y'.
-- Write a query example that retrieves names that do not start with the letter range 'A-D'.
-- Write a query example to demonstrate how you would escape the '%' sign and retrieve columns containing the '%' sign in the text.
+- Write a query that uses LIKE. The query should retrieve names starting with 'z'.
+- Write a query that uses LIKE. The query should retrieve names ending in 'er'.
+- Write a query that uses LIKE. The query should retrieve names beginning with 't' and ending in 's'.
+- Write a query that uses LIKE. The query should retrieve names that start with any character, followed by 'u', followed by any characters.
+- Write a query that uses LIKE. The query should retrieve names starting with 'Z' or 'Y'.
+- Write a query that uses LIKE. The query should retrieve names that do not start with the letter range 'A-D'.
+- Write a query that uses LIKE and ESCAPE. The query should retrieve comments that include the text '30%'.
 
 ### 4e. Column Aliases
-- Write a query example to demonstrate how you would give a column alias containing spaces.
-- Write a query example to demonstrate how inner joins can have one letter alias names.
+- Write a query that uses a column alias.  The query should return all customers first names and last names joined together with an alias 'Full Name'.
+- Write a query that uses a column alias. The query should be an inner join where a column alias is used for the table names and the table name alias is used in columns where required.
 
 ## 5. Joining Tables
 
@@ -67,7 +67,7 @@
 - Write a query that uses CROSS JOIN. The table should display all possible combinations of store id and product id. The columns should be store_id, product_id and a sales column which uses a function to return 0 the sales column is NULL. 
 
 ### 5f. Self Join
-- Write a query that uses SELF JOIN to find all employees and their managers from the same employees table.
+- Write a query that uses SELF JOIN. The query should find all employees and their managers from the same employees table.
 
 ## 6. Grouping
 
@@ -96,64 +96,65 @@
 ## 7. SubQuery
 
 ### 7a. Overview
-- Write a query that has a subquery in the WHERE clause, using the IN keyword. 
-- Write a query that has a subquery as a column. The subquery should query from a related table. The subquery should contain the MAX keyword.
+- Write a query that has a subquery in the WHERE clause, after the IN keyword. The query should return order information and the customer id of the order, for customers whose city is New York. 
+- Write a query that has uses a subquery for a column. The query should return order id, order date and the maximum list price from the order items for that order.
 
 ### 7b. Correlated SubQuery
-- Write a correlated subquery inside a WHERE clause and after the IN keyword. The subquery should contain the MAX keyword.
+- Write a correlated subquery inside a WHERE clause and after the IN keyword. The query should return product name, list price and category from the products table, where the product has the highest list price in its category.
 
 ### 7c. Exists
-- Write a correlated subquery inside the WHERE clause, after the EXISTS keyword. The subquery should contain the COUNT and HAVING keywords.
+- Write a correlated subquery inside the WHERE clause, after the EXISTS keyword. The subquery should contain the COUNT and HAVING keywords. The query should return all customers who have placed more than 2 orders in the orders table.
 
 ### 7d. Any
-- Write a query that has a subquery inside the WHERE clause, after the ANY keyword. 
+- Write a query that has a subquery inside the WHERE clause, after the ANY keyword. The query should return any products that have a quantity of more than 2 in the order items table.
 
 ### 7e. All
-- Write a query that has a subquery inside the WHERE clause, after the ALL keyword. The subquery should contain the AVG keyword.
+- Write a query that has a subquery inside the WHERE clause, after the ALL keyword. The subquery should contain the AVG keyword. The query should return all products who have a higher list price than all of average list prices grouped by brand_id.
 
 ## 8. Set Operators
 
 ### 8a. Union
-- Write a query example to demonstrate how to combine two queries with identical data types, removing all duplicate rows between the two tables.
+- Write a query that uses UNION. The query should retrieve the first name and last name of all staff and customers, removing any duplicates where staff are also customers.
 
 ### 8b. Union All
-- Write a query example to demonstrate how to combine two queries with identical data types, keeping all duplicate rows between the two tables.
+- Write a query that uses UNION ALL. The query should retrieve the first name and last name of all staff and customers, keeping any duplicates in the result, for example, where staff are also customers.
 
 ### 8c. Intersect
-- Write a query example to demonstrate how to use two tables and INTERSECT to find objects or people that appear in both tables.
+- Write a query that uses INTERSECT. The query should find players that appear in both of these invented tables - player_of_the_year_2021 and player_of_the_year_2020.
 
 ### 8d. Except
-- Write a query example to demonstrate how to use two tables and EXCEPT to find object or people that appear in the first table but not in the second tables.
+- Write a query that uses EXCEPT. The query should retrieve employees from the employees table who do not also appear in an invented health_and_safety certificate table.
 
 ## 9. CTEs
 
 ### 9a. CTEs
-- Write a query example to demonstrate how to create a CTE with column aliases in the outer table to - Write a query example to return sales totals for each salesperson for the year 2019.
-- Write a query example to demonstrate how to create a CTE that retrieves the average order count per member of staff for the year 2018.
-- Write a query example showing how you could use multiple CTEs as the tables used by a join.
+- Write a query that uses a CTE inlcuding WITH and GROUP BY. The query should return the sales totals per salesperson per year for the year 2019.
+- Write a query that uses CTE including WITH, COUNT, GROUP BY and AVG. The query should retrieve the average order count per member of staff for the year 2018.
+- Write a query example that shows the outline syntax (without specific columns) showing how you could write multiple CTEs to be used as tables within a join query.
 
 ### 9b. Recursive CTEs
-- Write a query example to demonstrate how a recursive CTE could return the numbers 1-4.
-- Write a query example to demonstrate how a recursive CTE could return all employees and their managers from within the same table.
+- Write a query that uses a CTE including UNION ALL to return the numbers 1 to 4 recursively.
+- Write a query that uses a CTE including UNION ALL. The query should recursively return all employees and their managers from within the same employees table.
 
 ## 10. Pivot
 
 ### 10a. Pivot
-- Write a query example to demonstrate how you could return the total number of products per category with the category names pivoted to become columns in the result.
-- Write a query example to demonstrate how you could add a year column to the query to create a row group called year to display product totals by category in the columns and by year as a row group.
+- Write a query that uses PIVOT. The query should retrieve the total number of products per category name. The category names should be pivoted to become column headings.
+- Write a query that uses PIVOT. The query should retrieve the total number of products per category name per model year. The category names should be pivoted to become column headings, while the model year should be row headings.
 
 ## 11. Expressions
 
 ### 11a. Case
-- Write a query example to demonstrate how you could use CASE to create two columns - 'Pass' and 'Fail' that count how many exam scores recieved a 'Pass' or a 'Fail'.
-- Write a query example to demonstrate how you could return all students, their results and a column called outcome with 'Pass' or 'Retake' added depending if the score was over 70 or not.
+- Write a query that uses CASE. The query should return students names, their test scores and an outcome column saying 'Pass' or 'Fail', depending if the test score was over 70 or not, from an invented test_scores table.
+- Write a query that uses CASE. The query should return students names, their test scores and an outcome column saying 'Pass', 'Fail' or 'Possible retake', depending if the test score was over 70, between 60 and 70, or less than 60, from an invented test_scores table.
 
 ### 11b. Coalesce
-- Write a query example to demonstrate how you could use COALESCE to return employee names and emails, returning 'N/A' if the email is NULL.
-- Write a query example to demonstrate how you could use COALESCE to calculate a monthly salary column for all employees in a table, even if the employee has an hourly or daily salary rate in a corresponding column.
+- Write a query that uses COALESCE. The query should retrieve the first name, last name and email of all employees. If the email address is NULL, then a string saying 'N/A' should be returned instead. 
+- Write a query that uses COALESCE. The query should return a monthly_salary column for each employee.  Employees have one of hourly_rate, weekly_rate or monthly_rate already in the salaries table. 
+The query should calcaulte a monthly rate if the employees salary is saved as hourly or weekly.
 
 ### 11c. NullIf
-- Write a query example to demonstrate how you could use NULLIF to return an email address as NULL if the email address is blank.
+- Write a query that uses NULLIF. The query should return name and email columns from the clients table. If the email is an empty string, then NULL should be returned instead.
 
 
 
