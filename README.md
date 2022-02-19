@@ -1,22 +1,19 @@
 # SQL One Pagers
 
 ## INTRO
-This is a one page reference for the most common SQL Data Query Language queries. 
+These SQL one pagers include every query for the most common SQL queries, all in one page. 
 
-This repo is only focussed on data query language. See 'Related' to setup the server and download sample databases you can work with.
+The most common DQL (Data Query Language) queries are in one page with a separate 'test yourself' file.  The most common Window functions for more advanced analysis are included in a separate file, with another 'test yourself' file.
 
 ## CONTENTS
-**sql-dql-queries.ipynb**
-- This file has 11 sections of the most common SQL DQL query examples in one page with query explanations and notes.
+**sql-dql-queries.ipynb** - 11 sections of the most common SQL DQL query examples in one page with clear query aims and notes.
+**sql-dql-queries-syntax-only.ipynb** - Quick syntax guide - only queries
+**sql-dql-queries-test-yourself.ipynb**- Simple query tests. A great way to test your knowledge. 
 
-**sql-dql-queries-syntax-only.ipynb**
-- This file has the same 11 sections of queries just without any notes for quick syntax checking.
+**sql-window-functions** - 10 most common Window functions for ananylis in SQL. Clear query aims and notes added.
+**sql-window-functions-test-yourself** - Simple query tests. A great way to test your knowledge. 
 
-**sql-dql-queries-test-yourself.ipynb**
-- This file is a list of simple tests to help users remember all of the example queries from each topic.
-- If you can confidently write out query examples for every section, then you're on your way to mastering querying in SQL.
-
-### SECTIONS
+### DQL QUERIES SECTIONS
 1. **SQL Query Order**
 2. **Sorting** - Order by
 3. **Limiting** - Offset, Fetch, Select Top
@@ -29,17 +26,33 @@ This repo is only focussed on data query language. See 'Related' to setup the se
 10. **Pivot**
 11. **Expressions** - Case, Coalesce, NullIf
 
+### WINDOW FUNCTIONS
+1. **Cumulative distribution**
+2. **Dense Rank**
+3. **First Value**
+4. **Lag**
+5. **Last Value**
+6. **Lead**
+7. **NTILE**
+8. **Percent Rank**
+9. **Rank**
+10. **Row Number**
+
 ## GETTING STARTED
-- The examples are a mix of my own and examples from online SQL Server tutorials.
-- If you are learning or working on PostgreSQL or MySQL, the 'sql-dql-queries-test-yourself' file is still useful for checking gaps in your knowledge. The 'sql-dql-queries page is also a useful reference even though the syntax will be different in some parts.
+- If you already know SQL, maybe test your knowledge with the 'test-yourself' files.
+- If you are new to SQL, see the links in the related section to setup and download a practice database.
+- The queries are here are used (mainly) with the BikeStore database from the sqlservertutorial in the related section.
 
 ## TOOLS
 - SQL Server
+- BikeStore Database
 
 ## RELATED
 - SQL Server
 https://docs.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15
 https://www.sqlservertutorial.net
+
+- The syntax is slightly different for PostreSQL and MySQL and the sample databases are slightly different too, but the topics covered in this are used across all database server types.
 
 - Postgresql
 https://www.postgresql.org/docs/8.0/tutorial.html
