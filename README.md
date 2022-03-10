@@ -3,7 +3,9 @@
 ## INTRO
 These SQL one pagers include every query for the most common SQL queries, all in one page. 
 
-The most common DQL (Data Query Language) queries are in one page with a separate 'test yourself' file.  The most common Window functions for more advanced analysis are included in a separate file, with another 'test yourself' file.
+The most common DQL (Data Query Language) queries are in one page with a separate 'test yourself' file.  
+
+The most common Window functions for more advanced analysis are included in a separate file, with another 'test yourself' file.
 
 ## CONTENTS
 **sql-dql-queries.ipynb** - 11 sections of the most common SQL DQL query examples in one page with clear query aims and notes.
@@ -52,7 +54,8 @@ The most common DQL (Data Query Language) queries are in one page with a separat
 https://docs.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15
 https://www.sqlservertutorial.net
 
-- The syntax is slightly different for PostreSQL and MySQL and the sample databases are slightly different too, but the topics covered in this are used across all database server types.
+- The topics covered in this are used across all database server types.
+- The syntax is slightly different for PostreSQL and MySQL and the sample databases are slightly different too, but 
 
 - Postgresql
 https://www.postgresql.org/docs/8.0/tutorial.html
