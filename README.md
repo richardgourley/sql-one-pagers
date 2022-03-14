@@ -9,10 +9,13 @@ The most common Window functions for more advanced analysis are included in a se
 
 ## CONTENTS
 **sql-dql-queries.ipynb** - 11 sections of the most common SQL DQL query examples in one page with clear query aims and notes.
+
 **sql-dql-queries-syntax-only.ipynb** - Quick syntax guide - only queries
+
 **sql-dql-queries-test-yourself.ipynb**- Simple query tests. A great way to test your knowledge. 
 
 **sql-window-functions** - 10 most common Window functions for ananylis in SQL. Clear query aims and notes added.
+
 **sql-window-functions-test-yourself** - Simple query tests. A great way to test your knowledge. 
 
 ### DQL QUERIES SECTIONS
@@ -54,8 +57,7 @@ The most common Window functions for more advanced analysis are included in a se
 https://docs.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15
 https://www.sqlservertutorial.net
 
-- The topics covered in this are used across all database server types.
-- The syntax is slightly different for PostreSQL and MySQL and the sample databases are slightly different too, but 
+- The topics covered in this the DQL files are used across all database servers (although the syntax will vary.)  The 'test_yourself' files could be used to also check overall knowledge with Postgres and MySQL databases.
 
 - Postgresql
 https://www.postgresql.org/docs/8.0/tutorial.html
