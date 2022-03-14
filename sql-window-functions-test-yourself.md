@@ -28,3 +28,6 @@
 
 ## 7. NTile
 - Write a query that uses NTILE (OVER), PARTITION BY and ORDER BY. The query should return the net_sales for each category, by month, with the an extra column named net_sales_group which has a number which indicates the group the results belongs to, after ordering net_sales in descending order, and dividing the results into 4 groups.
+
+## 8. Percent Rank
+- Write a query that uses FORMAT, PERCENT_RANK (OVER), PARTITION BY and ORDER BY. The query should return the full name of the staff member, their total net_sales grouped (partitioned) by 2016 and 2017, and a column named percent_rank showing where each person's net_sales appears as a formatted percentage figure, relative to every other sales person.
