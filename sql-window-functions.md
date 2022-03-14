@@ -65,3 +65,43 @@ FROM
 WHERE
 	year = 2018;
 ```
+
+----------
+
+# 7. NTile
+
+**QUERY AIM:**
+- This query returns net_sales for each category by month and an extra column named 'net_sales_group' which uses NTILE(4) to group the results (ordered by net_sales DESC) into 4 groups.
+
+**NOTES:**
+- NTILE effectively groups the results returned. If you specify NTILE(4) for a result set of 12 rows, you will have 4 groups of 3.
+- How you order the results determines if its the highest or lowest values appearing first. Then you can group those results.
+- As an example, if the salespeople were ordered with highest sales first, here is how returning NTILE(3) as a column called 'sales_ranking' would result in 3 groups of 2 if we had 6 salespeople...
+
+**Salesperson, Total, sales_ranking**
+
+Bob, 4500, 1
+
+Sally, 4300, 1
+
+Jenny, 4000, 2
+
+Bill, 3800, 2
+
+Dave, 3500, 2
+
+Tony, 3200, 3
+
+```
+SELECT
+	category_name,
+	month, 
+	FORMAT(net_sales,'C','en-US') net_sales,
+	NTILE(4) OVER(
+		PARTITION BY category_name
+		ORDER BY net_sales DESC
+	) net_sales_group
+FROM 
+	sales.vw_netsales_2017;
+```
+
