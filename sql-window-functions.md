@@ -36,7 +36,7 @@
 
 **NOTES:**
 - LEAD is useful for comparing the value of the current row with the value of the next row, or a number of rows ahead.
-- LEAD gives you side by side, a sales total for the current month (or year or quarter) and the result from the following month (or 6 months, 12 months ahead, as you require.)
+- LEAD gives you side by side, a sales total for the current month (or year or quarter) and the result from the following month (or more than 1 month, as you require.)
 - LEAD allows you to further create another column comparing sales for February with sales for March (the following month.)
 -  The results would look something like this...
 
