@@ -27,3 +27,29 @@
 
 **10.Low Number**
 
+---------
+
+##6. Lead
+
+**QUERY AIM:**
+
+
+**NOTES:**
+- LEAD is useful for comparing the value of the current row with the value of the next row, or a number of rows ahead.
+- LEAD gives you side by side, a sales total for the current month (or year or quarter) and the result from the following month (or 6 months, 12 months ahead, as you require.)
+- LEAD allows you to further create another column comparing sales for February with sales for March (the following month.)
+
+```
+SELECT 
+	month,
+	brand_name,
+	net_sales,
+	LEAD(net_sales,1) OVER (
+		PARTITION BY brand_name
+		ORDER BY month
+	) next_month_sales
+FROM 
+	sales.vw_netsales_brands
+WHERE
+	year = 2018;
+```
