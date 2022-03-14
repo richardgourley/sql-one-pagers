@@ -57,7 +57,7 @@ The most common Window functions for more advanced analysis are included in a se
 https://docs.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15
 https://www.sqlservertutorial.net
 
-- The topics covered in this the DQL files are used across all database servers (although the syntax will vary.)  The 'test_yourself' files could be used to also check overall knowledge with Postgres and MySQL databases.
+- The topics covered in the DQL (Data Query Language) files are used across all database servers (although the syntax will vary.)  The 'test_yourself' files could be used to also check overall knowledge with Postgres and MySQL databases.
 
 - Postgresql
 https://www.postgresql.org/docs/8.0/tutorial.html
