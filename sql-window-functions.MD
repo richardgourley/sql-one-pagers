@@ -5,3 +5,10 @@
 - Query aims and notes are added to each query.
 - To keep the length down, table creation is not included BUT the data types used in the examples are clear.
 
+**CONTENT:**
+**1. Cumulative Distribution**
+**2. Dense Rank**
+**3. First Value**
+**4. Lag**
+**5. Last Value**
+
