@@ -29,7 +29,7 @@
 
 ---------
 
-##6. Lead
+## 6. Lead
 
 **QUERY AIM:**
 - This query aims to return net sales per brand, per month, ordered by month for 2018, with an additional column that returns the sales for the FOLLOWING month in a column next to the net sales for each month.
