@@ -130,17 +130,20 @@ Bill, 3800, 40.0%
 
 ```
 SELECT 
+    year,
     CONCAT_WS(' ',first_name,last_name) full_name,
     net_sales, 
-    PERCENT_RANK() OVER (
-        ORDER BY net_sales DESC
-    ) percent_rank
+    FORMAT(
+        PERCENT_RANK() OVER (
+            PARTITION BY year
+            ORDER BY net_sales DESC
+        ) ,
+    'P') percent_rank
+
 FROM 
     sales.vw_staff_sales t
 INNER JOIN sales.staffs m on m.staff_id = t.staff_id
 WHERE 
-    YEAR = 2016;
-
+    YEAR IN (2016,2017);
 ```
-
 
