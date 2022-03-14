@@ -108,7 +108,7 @@ FROM
 # 8. Percent Rank
 
 **QUERY AIM:**
-- This query retrieves the full name of each salesperson, their net sales for 2016 and where the net_sales total lies as a percentage rank (top 20%, top 40% etc.)
+- This query retrieves the full name of each salesperson, their net sales grouped by the years 2016 and 2017 using PARTITION BY and a column showing where their net_sales lie as a percentage rank (top 20%, top 40% etc.) relative to the other salespeople.
 
 **NOTES:**
 - PERCENT RANK gives you a column which ranks the row as a percentage relative to other results.
