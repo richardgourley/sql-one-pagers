@@ -14,7 +14,7 @@ The most common Window functions for more advanced analysis are included in a se
 
 **sql-dql-queries-test-yourself.ipynb**- Simple query tests. A great way to test your knowledge. 
 
-**sql-window-functions** - 10 most common Window functions for ananylis in SQL. Clear query aims and notes added.
+**sql-window-functions** - 10 most common Window functions for data analysis with SQL. Clear query aims and notes added.
 
 **sql-window-functions-test-yourself** - Simple query tests. A great way to test your knowledge. 
 
