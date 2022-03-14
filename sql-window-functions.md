@@ -105,3 +105,42 @@ FROM
 	sales.vw_netsales_2017;
 ```
 
+# 8. Percent Rank
+
+**QUERY AIM:**
+- This query retrieves the full name of each salesperson, their net sales for 2016 and where the net_sales total lies as a percentage rank (top 20%, top 40% etc.)
+
+**NOTES:**
+- PERCENT RANK gives you a column which ranks the row as a percentage relative to other results.
+- PERCENT RANK returns the result as a numeric percentage.  FORMAT can be used to format the value into a %.
+- As with most other window functions, PARTITION BY is optional. If not used, then the whole result set is treated as one partition.
+- Here is an example of results you might get if using PERCENT RANK...
+
+**Salesperson, Total, percent_rank**
+
+Bob, 4500, 100.0%
+
+Sally, 4300, 80.0%
+
+Jenny, 4000, 60.0%
+
+Bill, 3800, 40.0%
+
+.......
+
+```
+SELECT 
+    CONCAT_WS(' ',first_name,last_name) full_name,
+    net_sales, 
+    PERCENT_RANK() OVER (
+        ORDER BY net_sales DESC
+    ) percent_rank
+FROM 
+    sales.vw_staff_sales t
+INNER JOIN sales.staffs m on m.staff_id = t.staff_id
+WHERE 
+    YEAR = 2016;
+
+```
+
+
