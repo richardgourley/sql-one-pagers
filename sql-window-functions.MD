@@ -32,12 +32,25 @@
 ##6. Lead
 
 **QUERY AIM:**
-
+- This query aims to return net sales per brand, per month, ordered by month for 2018, with an additional column that returns the sales for the FOLLOWING month in a column next to the net sales for each month.
 
 **NOTES:**
 - LEAD is useful for comparing the value of the current row with the value of the next row, or a number of rows ahead.
 - LEAD gives you side by side, a sales total for the current month (or year or quarter) and the result from the following month (or 6 months, 12 months ahead, as you require.)
 - LEAD allows you to further create another column comparing sales for February with sales for March (the following month.)
+-  The results would look something like this...
+
+**Month, Brand, net_sales, next_month_sales**
+
+1, BrandA, 300, 700
+
+2, BrandA, 700, 400
+
+3, BrandA, 400, 600
+
+.....
+
+12, BrandA, 380, NULL
 
 ```
 SELECT 
