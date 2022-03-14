@@ -38,6 +38,7 @@
 - An example of the middle section of a result set could like this:
 
 **full_name, net_sales, cume_dist**
+
 Bob, 360, 0.4
 
 Sandra 320, 0.5
@@ -59,7 +60,7 @@ INNER JOIN sales.staffs m on m.staff_id = t.staff_id
 WHERE 
     year = 2017;
 ```
----
+
 **QUERY AIM:**
 - This query aims to tell us where the sales persons net_sales come, relevant to other salespeople by year. Only the results for 2016 and 2017 are retrieved.
 
