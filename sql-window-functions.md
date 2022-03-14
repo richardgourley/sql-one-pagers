@@ -85,6 +85,230 @@ WHERE
     year IN (2016,2017);
 ```
 
+# 2. Dense Rank
+
+**QUERY AIM:**
+- This query aims to give rankings with ordered ranking groups with 1 for the highest for the list price of products.
+
+**NOTES:**
+- DENSE_RANK() is relevant when their are ties in totals.
+- DENSE_RANK() groups totals into a rank in order 1,2,3,4 etc. regardless of how many items are tied in each group.
+- Here is how a results with DENSE_RANK might look.....
+
+**Total Rank**
+
+50, 1
+
+50, 1
+
+50, 1
+
+60, 2 (In normal ranking, this would be considered as 4th position)
+
+60, 2
+
+70, 3 (In normal ranking, this would be considered as 7th postion)
+
+```
+SELECT
+    product_id,
+    product_name,
+    list_price,
+    DENSE_RANK () OVER ( 
+        ORDER BY list_price DESC
+    ) price_rank 
+FROM
+    production.products;
+```
+
+**QUERY AIM:**
+- This query again gives a ranking to each product list price inside a ranking group but this query ranks the products in sections of category id.
+
+**NOTES:**
+- The PARTITION BY category_id means we have the results returned in sections by category_id.
+- DENSE_RANK() will group any tied values together (see above)
+
+```
+SELECT
+        product_id,
+        product_name,
+        category_id,
+        list_price,
+        DENSE_RANK () OVER ( 
+            PARTITION BY category_id
+            ORDER BY list_price DESC
+        ) price_rank 
+    FROM
+        production.products
+```
+
+# 3. First Value
+
+**QUERY AIM:**
+- This query aims to display category and quantity information for each category followed by a spearate column that has the category name of the category with the lowest quantity of orders.
+
+**NOTES:**
+- FIRST_VALUE is used to display the category_name in a lowest_sales_volume column for every row.
+- PARTITION BY is not used so the entire result set is evaluated and ONE category will appear in the lowest_sales_volume column for the entire table.
+
+```
+SELECT 
+    category_name,
+    year,
+    qty,
+    FIRST_VALUE(category_name) OVER(
+        ORDER BY qty
+    ) lowest_sales_volume
+FROM 
+    sales.vw_category_sales_volume
+WHERE
+    year = 2017;
+```
+
+**QUERY AIM:**
+- This query aims to display category, year and quantity information per year as well as a lowest_sales_volume column with the name of the category with the lowest sales volume for that year.
+
+**NOTES:**
+- PARTITION BY is used to partition the results by year.
+- The results would look something like this:
+
+**category_name year qty lowest_sales_volume**
+
+CAT A, 2016, 52, CAT A
+
+CAT B, 2016, 60, CAT A
+
+CAT B, 2017, 41, CAT B
+
+CAT A, 2017, 53, CAT B
+
+```
+SELECT 
+    category_name,
+    year,
+    qty,
+    FIRST_VALUE(category_name) OVER(
+        `PARTITION BY` year
+        ORDER BY qty
+    ) lowest_sales_volume
+FROM 
+    sales.vw_category_sales_volume
+WHERE
+    year BETWEEN 2016 AND 2017;
+```
+
+# 4. Lag
+
+**QUERY AIM:**
+- This query aims to print net sales for each month in 2018 and in the same row, have a column that displays the previous months sales.
+
+**NOTES:**
+- LAG is useful for comparing a value in the current row with a value in the previous row.
+- In this query, LAG allows us to create further columns calculating current months sales vs. previous months sales.
+- When using LAG, the first result will have a NULL value because there are no previous results for the first column. An example...
+
+**Month, net_sales, previous_month_sales**
+
+January, 200, NULL
+
+February, 240, 200
+
+March, 190, 240
+
+```
+WITH cte_netsales_2018 AS(
+    SELECT 
+        month, 
+        SUM(net_sales) net_sales
+    FROM 
+        sales.vw_netsales_brands
+    WHERE 
+        year = 2018
+    GROUP BY 
+        month
+)
+SELECT 
+    month,
+    net_sales,
+    LAG(net_sales,1) OVER (
+        ORDER BY month
+    ) previous_month_sales
+FROM 
+    cte_netsales_2018;
+```
+
+**QUERY AIM:**
+- This query aims to display net sales partitioned by brand and then grouped by month with an additional column in each row showing the previous months net sales.
+
+**NOTES:**
+- LAG allows us to see the previous months sales next to the current month.
+- PARTITION BY allows us to group results together within the LAG function by brand.
+
+```
+SELECT 
+    month,
+    brand_name,
+    net_sales,
+    LAG(net_sales,1) OVER (
+        PARTITION BY brand_name
+        ORDER BY month
+    ) next_month_sales
+FROM 
+    sales.vw_netsales_brands
+WHERE
+    year = 2018;
+```
+
+# 5. Last Value
+
+**QUERY AIM:**
+- This query retrieves category_name, year and quantity of orders, ordered in a non-ascending way, and then a highest sales volume column which displays the highest category_name (last value) for the entire table.
+
+**NOTES:**
+- PARTITON BY is not used so the entire table is used undivided.
+- RANGE allows defining of start and end points within a partition.
+
+```
+SELECT 
+    category_name,
+    year,
+    qty,
+    LAST_VALUE(category_name) OVER(
+        ORDER BY qty
+         RANGE BETWEEN 
+            UNBOUNDED PRECEDING AND 
+            UNBOUNDED FOLLOWING
+    ) highest_sales_volume
+FROM 
+    sales.vw_category_sales_volume
+WHERE
+    year = 2016;
+```
+
+**QUERY AIM:**
+- This query aims to return the category name, year, quantity sold and for each category with a further column displaying the category with the highest quantity for the year of the row. The search limits results to the years 2016 and 2017.
+
+**NOTES:**
+- PARTITION BY year will break the results into two partition sets for each year with the highest quantity category being displayed in a column for that year appearing in all rows for that year.
+
+```
+SELECT 
+    category_name,
+    year,
+    qty,
+    LAST_VALUE(category_name) OVER(
+            PARTITION BY year
+        ORDER BY qty
+        RANGE BETWEEN 
+            UNBOUNDED PRECEDING AND 
+            UNBOUNDED FOLLOWING
+    ) highest_sales_volume
+FROM 
+    sales.vw_category_sales_volume
+WHERE
+    year IN (2016,2017);
+```
+
 # 6. Lead
 
 **QUERY AIM:**
