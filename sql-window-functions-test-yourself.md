@@ -22,3 +22,9 @@
 ## 5. Last Value
 - Write a query that uses LAST VALUE, ORDER BY and RANGE. The query should return quantity sales for each category name and year and include another column that states the category with the highest overall quantity total for the table. The years required are 2016 and 2017.
 - Write a query that uses LAST VALUE, PARTITION BY, ORDER BY and RANGE. The query should return quantity sales for each category name and year and include another column that states the category with the highest overall quantity total for the year of the row. The query should be partitioned into years.  The years required are 2016 and 2017.
+
+## 6. Lead
+- Write a query that uses LEAD (OVER), PARTITTION BY and ORDER BY. The query should return net sales per brand for 2018, and a column named next_month_sales that returns the net_sales value for the next month.
+
+## 7. NTile
+- Write a query that uses NTILE (OVER), PARTITION BY and ORDER BY. The query should return the net_sales for each category, by month, with the an extra column named net_sales_group which has a number which indicates the group the results belongs to, after ordering net_sales in descending order, and dividing the results into 4 groups.
