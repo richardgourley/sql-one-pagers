@@ -28,8 +28,63 @@
 **10.Low Number**
 
 ---------
+# 1. Cumulative Distribution
 
-## 6. Lead
+**QUERY AIM:**
+- This query aims to tell us where the sales persons net_sales come, relative to the net_sales of all of the other sales people.
+
+**NOTES:**
+- The PARTITION BY clause is optional and not included in this query. So, the CUME_DIST function will treat the result set as one partition.
+- An example of the middle section of a result set could like this:
+
+**full_name, net_sales, cume_dist**
+Bob, 360, 0.4
+
+Sandra 320, 0.5
+
+Debbie, 329, 0.62
+
+- In the example above, we can see that Sandra's net_sales of 320 are the halfway point. 50% of the sales people have net_sales higher than 320.
+
+```
+SELECT 
+    CONCAT_WS(' ',first_name,last_name) full_name,
+    net_sales, 
+    CUME_DIST() OVER (
+        ORDER BY net_sales DESC
+    ) cume_dist
+FROM 
+    sales.vw_staff_sales t
+INNER JOIN sales.staffs m on m.staff_id = t.staff_id
+WHERE 
+    year = 2017;
+```
+---
+**QUERY AIM:**
+- This query aims to tell us where the sales persons net_sales come, relevant to other salespeople by year. Only the results for 2016 and 2017 are retrieved.
+
+**NOTES:**
+- PARTITION BY is used - we receive the cumulative distribution of net_sales in year groups.
+- The query returns all salespeople, net sales, cumulative distribution for 2016 and then repeats for each salesperson for 2017.
+- This query can be used as a CTE or in a subquery to further filter the results to find, say the top 10% of salespeople per year by adding a WHERE cume_dist >= 0.10
+
+```
+SELECT 
+    CONCAT_WS(' ',first_name,last_name) full_name,
+    net_sales, 
+    year,
+    CUME_DIST() OVER (
+        PARTITION BY year
+        ORDER BY net_sales DESC
+    ) cume_dist
+FROM 
+    sales.vw_staff_sales t
+INNER JOIN sales.staffs m on m.staff_id = t.staff_id
+WHERE 
+    year IN (2016,2017);
+```
+
+# 6. Lead
 
 **QUERY AIM:**
 - This query aims to return net sales per brand, per month, ordered by month for 2018, with an additional column that returns the sales for the FOLLOWING month in a column next to the net sales for each month.
@@ -65,8 +120,6 @@ FROM
 WHERE
 	year = 2018;
 ```
-
-----------
 
 # 7. NTile
 
