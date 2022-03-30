@@ -31,3 +31,6 @@
 
 ## 8. Percent Rank
 - Write a query that uses FORMAT, PERCENT_RANK (OVER), PARTITION BY and ORDER BY. The query should return the full name of the staff member, their total net_sales grouped (partitioned) by 2016 and 2017, and a column named percent_rank showing where each person's net_sales appears as a formatted percentage figure, relative to every other sales person.
+
+## 9. Rank
+- Write a query that uses, RANK (OVER) and ORDER BY. The query should return product_id, product_name, list_price and a column called price_rank that will give a ranking to each list_price in descending order.
