@@ -1,7 +1,7 @@
 # SQL Window Functions - One Page
 
 - A one page reference of the most common Window functions for SQL.
-- These are often used in retrieving information for analysis.
+- These queries are often used for retruning data ready for analysis by ranking and grouping data into buckets, which is often used in creating histograms and other data visualizations. 
 - Query aims and notes are added to each query.
 - To keep the length down, table creation is not included BUT the data types used in the examples are clear.
 
@@ -353,7 +353,7 @@ WHERE
 
 **NOTES:**
 - NTILE effectively groups the results returned. If you specify NTILE(4) for a result set of 12 rows, you will have 4 groups of 3.
-- How you order the results determines if its the highest or lowest values appearing first. Then you can group those results.
+- How you order the results (ASC or DESC) determines if its the highest or lowest values appearing first. Then you can group those results into 'bins'.
 - As an example, if the salespeople were ordered with highest sales first, here is how returning NTILE(3) as a column called 'sales_ranking' would result in 3 groups of 2 if we had 6 salespeople...
 
 **Salesperson, Total, sales_ranking**
@@ -366,7 +366,7 @@ Jenny, 4000, 2
 
 Bill, 3800, 2
 
-Dave, 3500, 2
+Dave, 3500, 3
 
 Tony, 3200, 3
 
@@ -423,5 +423,29 @@ FROM
 INNER JOIN sales.staffs m on m.staff_id = t.staff_id
 WHERE 
     YEAR IN (2016,2017);
+```
+
+# 9. Rank
+
+**QUERY AIM:**
+- This query returns product id, product name, list price and an extra column 'price_rank' that gives a ranking to each row,  with 1 for the highest list price and on downwards.  List prices that are 'tied' receive the same ranking number.
+
+**NOTES:**
+- When values are the tied, the same ranking number is given.
+- The difference between RANK and DENSE_RANK is that RANk will continue with the exact position after a section of tied results, whereas DENSE_RANK returns no gaps between numbers....  This is best shown here:
+
+- RANK: 1,1,1,4,5,6,6,6,6
+- DENSE_RANK: 1,1,1,2,3,4,4,4,4
+
+```
+SELECT
+	product_id,
+	product_name,
+	list_price,
+	RANK () OVER ( 
+		ORDER BY list_price DESC
+	) price_rank 
+FROM
+	production.products;
 ```
 
