@@ -449,4 +449,26 @@ SELECT
 FROM
 	production.products;
 ```
+# 10. Row Number
 
+**QUERY AIM:**
+- This query returns first_name, last_name, city and an additional column called row_number, which starts at 1 and counts upwards for each city.  The cities are grouped together and the row count starts at 1 for each city.
+
+**NOTES:**
+- ROW_NUMBER is often used in reporting services such as pagination, where you want to display 10 results per page.
+- The ROW_NUMBER can be applied to an entire table by removing the PARTITION BY keyword from the query.
+
+```
+SELECT 
+   first_name, 
+   last_name, 
+   city,
+   ROW_NUMBER() OVER (
+      PARTITION BY city
+      ORDER BY first_name
+   ) row_num
+FROM 
+   sales.customers
+ORDER BY 
+   city;
+```
