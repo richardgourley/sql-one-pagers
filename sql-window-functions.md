@@ -460,10 +460,15 @@ FROM
 - Here is how the results from the query might look...
 
 **first_name, last_name, city, row_num**
+
 Bob, Jackson, Albany, 1
+
 Jenny, Smith, Albany, 2
+
 Sally, Davis, Albany, 3
+
 Trevor, Smith, Chicago, 1
+
 Dave, Wilson, Chicago, 2
 ....
 
