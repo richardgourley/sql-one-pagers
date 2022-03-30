@@ -34,3 +34,7 @@
 
 ## 9. Rank
 - Write a query that uses, RANK (OVER) and ORDER BY. The query should return product_id, product_name, list_price and a column called price_rank that will give a ranking to each list_price in descending order.
+
+## 10. Row Number
+
+- Write a query that uses, ROW_NUMBER (OVER), PARTITION BY and ORDER BY. The query should return first_name, last_name and city, with an additional column called 'row_num'.  The row_num column should reset to 1 and start incrementing for each city in the results.
