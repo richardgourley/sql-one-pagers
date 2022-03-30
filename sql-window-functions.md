@@ -91,7 +91,7 @@ WHERE
 - This query aims to give rankings with ordered ranking groups with 1 for the highest for the list price of products.
 
 **NOTES:**
-- DENSE_RANK() is relevant when their are ties in totals.
+- DENSE_RANK() is relevant when there are ties in totals, but you want to have no gaps in rank values (see RANK to compare ranking output possibilities.)
 - DENSE_RANK() groups totals into a rank in order 1,2,3,4 etc. regardless of how many items are tied in each group.
 - Here is how a results with DENSE_RANK might look.....
 
