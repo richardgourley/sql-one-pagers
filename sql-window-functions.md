@@ -432,6 +432,7 @@ WHERE
 
 **NOTES:**
 - When values are the tied, the same ranking number is given.
+- As with other window functions you can also use PARTITION BY to perform RANK on groups of data, for example PARTITION BY brand_id, will return results ranked into brand_id groups or bins.
 - The difference between RANK and DENSE_RANK is that RANk will continue with the exact position after a section of tied results, whereas DENSE_RANK returns no gaps between numbers....  This is best shown here:
 
 - RANK: 1,1,1,4,5,6,6,6,6
